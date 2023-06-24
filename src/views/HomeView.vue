@@ -14,10 +14,10 @@
       faça a diferença!
     </h3>
     <a href="https://github.com/arnonrdp/brasileiro-ninja">
-      <img alt="Logo Brasil API" src="src/assets/github.svg" />
+      <img alt="Logo Brasil API" src="/src/assets/github.svg" />
     </a>
     <a href="https://brasilapi.com.br/" target="_blank">
-      <img alt="Logo Brasil API" src="src/assets/brasilapi.webp" />
+      <img alt="Logo Brasil API" src="/src/assets/brasilapi.webp" />
     </a>
   </div>
 </template>
