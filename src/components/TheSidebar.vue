@@ -3,7 +3,7 @@
     <img  alt="Logo" class="logo" src="/logo.svg">
     <nav>
       <RouterLink to="/">Home</RouterLink>
-      <RouterLink to="/about">About</RouterLink>
+      <RouterLink to="/bancos">Bancos</RouterLink>
     </nav>
   </aside>
 </template>
