@@ -1,6 +1,6 @@
 <template>
   <aside>
-    <img  alt="Logo" class="logo" src="/logo.svg">
+    <img alt="Logo" class="logo" src="/logo.svg" />
     <nav>
       <RouterLink to="/">Home</RouterLink>
       <RouterLink to="/bancos">Bancos</RouterLink>
