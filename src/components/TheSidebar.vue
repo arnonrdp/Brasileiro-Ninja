@@ -1,6 +1,6 @@
 <template>
   <aside>
-    <h2>Brasileiro Ninja</h2>
+    <img  alt="Logo" class="logo" src="/logo.svg">
     <nav>
       <RouterLink to="/">Home</RouterLink>
       <RouterLink to="/about">About</RouterLink>
@@ -13,9 +13,11 @@ import { RouterLink } from 'vue-router'
 </script>
 
 <style scoped>
-h2 {
-  padding: 1.5rem 0;
-  text-align: center;
+img {
+  display: block;
+  margin: 0 auto;
+  padding: 1rem 0;
+  width: 10rem;
 }
 
 aside {
@@ -40,5 +42,11 @@ nav a {
 
 nav a:first-child {
   border-top: 0.1px solid #ccc;
+}
+
+@media (hover: hover) {
+  a:hover {
+    background-color: hsla(160, 100%, 37%, 0.2);
+  }
 }
 </style>
