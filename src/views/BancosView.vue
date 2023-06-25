@@ -1,7 +1,7 @@
 <template>
   <h1>Bancos</h1>
   <h2>Informações de todos os bancos do Brasil</h2>
-  <BaseInput v-model="search" />
+  <BaseInput v-model.trim="search" />
   <table>
     <thead>
       <tr>
@@ -12,7 +12,7 @@
       </tr>
     </thead>
     <tbody>
-      <tr v-for="bank in banks" :key="bank.code">
+      <tr v-for="bank in computedBanks" :key="bank.code">
         <td>{{ bank.code }}</td>
         <td>{{ bank.name }}</td>
         <td>{{ bank.fullName }}</td>
@@ -24,8 +24,8 @@
 
 <script setup>
 import BaseInput from '@/components/BaseInput.vue'
-import { readBanks } from '@/stores/bancos'
-import { onMounted, ref } from 'vue'
+import { readBanks } from '@/model/services'
+import { computed, onMounted, ref } from 'vue'
 
 const banks = ref([])
 const search = ref('')
@@ -33,6 +33,14 @@ const search = ref('')
 onMounted(async () => {
   await readBanks().then((response) => {
     banks.value = response
+  })
+})
+
+const computedBanks = computed(() => {
+  return banks.value.filter((bank) => {
+    return [bank.code, bank.name, bank.fullName, bank.ispb].some((value) => {
+      return value?.toString()?.toLowerCase().includes(search.value.toLowerCase())
+    })
   })
 })
 </script>
