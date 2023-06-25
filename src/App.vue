@@ -7,7 +7,7 @@
   </main>
 </template>
 
-<script setup lang="ts">
+<script setup>
 import { RouterView } from 'vue-router'
 import TheSidebar from './components/TheSidebar.vue'
 </script>

@@ -2,7 +2,7 @@
   <input autofocus placeholder="Pesquisar" v-model="value" />
 </template>
 
-<script setup lang="ts">
+<script setup>
 import { computed } from 'vue'
 
 const props = defineProps(['modelValue'])
