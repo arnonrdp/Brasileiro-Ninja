@@ -1,8 +1,7 @@
 <template>
   <h1>Bancos</h1>
   <h2>Informações de todos os bancos do Brasil</h2>
-  <BaseInput v-model="search" />
-  <button @click="onReadCEP"></button>
+  <BaseInput v-model="search" @search="onReadCEP" />
   {{ address }}
 </template>
 
