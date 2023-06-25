@@ -12,6 +12,11 @@ const router = createRouter({
       path: '/bancos',
       name: 'bancos',
       component: () => import('../views/BancosView.vue')
+    },
+    {
+      path: '/cep',
+      name: 'cep',
+      component: () => import('../views/CEPView.vue')
     }
   ]
 })
