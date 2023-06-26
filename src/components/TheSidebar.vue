@@ -1,8 +1,9 @@
 <template>
   <aside>
-    <img alt="Logo" class="logo" src="/logo.svg" />
+    <RouterLink to="/">
+      <img alt="Logo" class="logo" src="/logo.svg" />
+    </RouterLink>
     <nav>
-      <RouterLink to="/">Home</RouterLink>
       <RouterLink to="/bancos">Bancos</RouterLink>
       <RouterLink to="/cep">CEP</RouterLink>
     </nav>
