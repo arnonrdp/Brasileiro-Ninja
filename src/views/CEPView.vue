@@ -1,6 +1,10 @@
 <template>
-  <h1>Bancos</h1>
-  <h2>Informações de todos os bancos do Brasil</h2>
+  <h1>CEP</h1>
+  <h2>Informações referentes a CEPs</h2>
+  <h3>
+    A geolocalização dos CEPs estão suscetíveis a erros, pois as coordenadas são provindas do OpenStreetMap. Caso encontre algum erro você
+    poderá corrigir no próprio OpenStreetMap que será refletido no CEP V2.
+  </h3>
   <BaseInput v-model="search" @search="onReadCEP" />
   {{ address }}
 </template>
