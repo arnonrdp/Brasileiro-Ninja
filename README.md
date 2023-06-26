@@ -1,35 +1,15 @@
 # Brasileiro Ninja
 
-This template should help get you started developing with Vue 3 in Vite.
+<p align="center">
+<a href="https://brasileiro.ninja"><img src="https://img.shields.io/website?url=https%3A%2F%2Fbrasileiro.ninja" /></a>
+<img src="https://img.shields.io/github/package-json/v/arnonrdp/Brasileiro-Ninja" />
+<!-- <img alt="GitHub" src="https://img.shields.io/github/license/arnonrdp/Brasileiro-Ninja" /> -->
+<img src="https://img.shields.io/github/repo-size/arnonrdp/Brasileiro-Ninja" />
+<img alt="GitHub commit activity (branch)" src="https://img.shields.io/github/commit-activity/m/arnonrdp/Brasileiro-Ninja" />
+<br />
+<img src="https://img.shields.io/github/package-json/dependency-version/arnonrdp/Brasileiro-Ninja/vue" />
+<img src="https://img.shields.io/github/package-json/dependency-version/arnonrdp/Brasileiro-Ninja/vue-router" />
+<img src="https://img.shields.io/github/package-json/dependency-version/arnonrdp/Brasileiro-Ninja/axios" />
+</p>
 
-## Recommended IDE Setup
-
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
-
-## Customize configuration
-
-See [Vite Configuration Reference](https://vitejs.dev/config/).
-
-## Project Setup
-
-```sh
-npm install
-```
-
-### Compile and Hot-Reload for Development
-
-```sh
-npm run dev
-```
-
-### Compile and Minify for Production
-
-```sh
-npm run build
-```
-
-### Lint with [ESLint](https://eslint.org/)
-
-```sh
-npm run lint
-```
+<img src="./public/main.jpg" />
