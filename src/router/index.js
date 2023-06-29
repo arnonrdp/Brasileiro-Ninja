@@ -17,6 +17,11 @@ const router = createRouter({
       path: '/cep',
       name: 'cep',
       component: () => import('../views/CEPView.vue')
+    },
+    {
+      path: '/cnpj',
+      name: 'cnpj',
+      component: () => import('../views/CNPJView.vue')
     }
   ]
 })

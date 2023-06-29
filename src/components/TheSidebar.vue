@@ -6,6 +6,7 @@
     <nav>
       <RouterLink to="/bancos">Bancos</RouterLink>
       <RouterLink to="/cep">CEP</RouterLink>
+      <RouterLink to="/cnpj">CNPJ</RouterLink>
     </nav>
   </aside>
 </template>

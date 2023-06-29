@@ -9,3 +9,7 @@ export async function readBanks() {
 export async function readCEP(cep) {
   return await axios.get(`${baseUrl}/cep/v2/${cep}`).then((response) => response.data)
 }
+
+export async function readCNPJ(cnpj) {
+  return await axios.get(`${baseUrl}/cnpj/v1/${cnpj}`).then((response) => response.data)
+}
