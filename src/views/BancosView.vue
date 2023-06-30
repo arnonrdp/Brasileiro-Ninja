@@ -2,7 +2,7 @@
   <h1>Bancos</h1>
   <h2>Informações de todos os bancos do Brasil</h2>
   <BaseInput v-model.trim="search" />
-  <table>
+  <table class="my-table">
     <thead>
       <tr>
         <th>Código</th>
@@ -44,3 +44,25 @@ const computedBanks = computed(() => {
   })
 })
 </script>
+
+<style>
+.my-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.my-table thead {
+  background-color: #f5f5f5;
+}
+
+.my-table th,
+.my-table td {
+  padding: 8px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+.my-table tbody tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+</style>
