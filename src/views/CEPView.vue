@@ -7,6 +7,7 @@
   </h3>
   <BaseInput v-model="search" @search="onReadCEP" />
   <div v-if="Object.keys(address).length > 0" class="card">
+    <!-- PARTE DA FRENTE -->
     <div class="card-content">
       <div class="front">
         <div class="field">
@@ -34,6 +35,8 @@
           <div class="value">{{ address.street }}</div>
         </div>
       </div>
+
+      <!-- PARTE DE TRAS -->
       <div class="back">
         <p>Hello World</p>
       </div>
