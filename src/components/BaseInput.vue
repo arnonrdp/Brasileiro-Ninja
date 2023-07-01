@@ -1,15 +1,17 @@
 <template>
   <form @submit.prevent="search">
-    <input autofocus placeholder="Pesquisar" v-model="value" />
-    <button type="submit">&#128269;</button>
+    <input autofocus placeholder="Pesquisar" v-model="value" v-maska="bindedObject" :data-maska="mask" />
+    <button type="submit" :disabled="value.length !== length">&#128269;</button>
   </form>
 </template>
 
 <script setup>
-import { computed } from 'vue'
+import { computed, reactive } from 'vue'
+import { vMaska } from 'maska'
 
-const props = defineProps(['modelValue'])
+const props = defineProps(['modelValue', 'length', 'mask'])
 const emit = defineEmits(['update:modelValue', 'search'])
+const bindedObject = reactive({})
 
 const value = computed({
   get() {
@@ -21,7 +23,7 @@ const value = computed({
 })
 
 const search = () => {
-  emit('search')
+  emit('search', bindedObject.unmasked)
 }
 </script>
 

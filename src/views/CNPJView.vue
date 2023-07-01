@@ -5,7 +5,7 @@
     O Cadastro Nacional da Pessoa Jurídica (CNPJ) é um número único que identifica uma pessoa jurídica e outros tipos de arranjo jurídico
     sem personalidade jurídica junto à Receita Federal.
   </h3>
-  <BaseInput v-model="search" @search="onReadCNPJ" />
+  <BaseInput :length="18" mask="##.###.###/####-##" v-model="search" @search="onReadCNPJ" />
 
   <div v-if="Object.keys(cnpj).length > 0" class="card">
     <div class="header">
@@ -96,7 +96,7 @@
       <div class="wrap">
         <div class="block-10">
           <p>CEP</p>
-          <P class="bold">{{ cnpj.cep }}</P>
+          <p class="bold">{{ cnpj.cep }}</p>
         </div>
         <div class="block-11">
           <p>BAIRRO/DISTRITO</p>
@@ -122,7 +122,7 @@
 
         <div class="block-15">
           <p>TELEFONE</p>
-          <p class="bold">{{ cnpj.ddd_telefone_1 }} / {{ cnpj.ddd_telefone_2 || 'Não informado' }}</p>
+          <p class="bold">{{ cnpj.ddd_telefone_1 || 'Nào informado' }} / {{ cnpj.ddd_telefone_2 || 'Não informado' }}</p>
         </div>
       </div>
 
@@ -140,7 +140,7 @@
         </div>
         <div class="block-17">
           <p>DATA DA SITUAÇÃO CADASTRAL</p>
-          <P class="bold">{{ cnpj.data_situacao_cadastral }}</P>
+          <p class="bold">{{ cnpj.data_situacao_cadastral }}</p>
         </div>
       </div>
 
@@ -158,7 +158,7 @@
         </div>
         <div class="block-17">
           <p>DATA DA SITUAÇÃO ESPECIAL</p>
-          <P class="bold"></P>
+          <p class="bold">{{ cnpj.data_situacao_especial || 'Não informado' }}</p>
         </div>
       </div>
     </section>
@@ -173,8 +173,8 @@ import { ref } from 'vue'
 const cnpj = ref([])
 const search = ref('')
 
-async function onReadCNPJ() {
-  await readCNPJ(search.value).then((response) => {
+async function onReadCNPJ(event) {
+  await readCNPJ(event).then((response) => {
     cnpj.value = response
   })
 }
@@ -201,7 +201,22 @@ body {
   width: 15%;
   height: 10%;
   float: left;
+  padding-top: 35px;
 }
+
+.title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 20px;
+  margin-left: 130px;
+}
+
+.title h1 {
+  padding-bottom: 40px;
+}
+
 .wrap {
   display: flex;
   padding: 0.8%;
@@ -218,7 +233,6 @@ body {
 
 .block-2 {
   border: 2px solid #000;
-  font-weight: bold;
   font-size: 25px;
 }
 
@@ -265,6 +279,7 @@ body {
   text-align: start;
   margin: 0 20px;
   padding-left: 10px;
+  padding-right: 10px;
 }
 
 .block-9 {
@@ -345,7 +360,7 @@ body {
 }
 
 .bold {
-  font-weight: 800;
+  font-weight: 750;
 }
 </style>
 
