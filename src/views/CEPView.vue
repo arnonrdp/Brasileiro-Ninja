@@ -38,14 +38,17 @@
 
       <!-- PARTE DE TRAS -->
       <div class="back">
-        <div class="back">
-          <div class="map-container" ref="map"></div>
-        </div>
-        <p>
-          {{ address.location.coordinates.longitude }}
-          <br />
-          {{ address.location.coordinates.latitude }}
-        </p>
+        <!-- Adicionar estilo -->
+        <GoogleMap
+          v-if="Object.keys(address.location.coordinates).length > 0"
+          api-key="AIzaSyAF-u6-H1EXcUchy3j0sKxeVQykTwNhHbk"
+          style="width: 100%; height: 100%"
+          :center="center"
+          :zoom="15"
+        >
+          <Marker :options="{ position: center }" />
+        </GoogleMap>
+        <p v-else>Coordenadas Indisponíveis</p>
       </div>
     </div>
   </div>
@@ -56,13 +59,20 @@ import BaseInput from '@/components/BaseInput.vue'
 import { readCEP } from '@/model/services'
 import { ref } from 'vue'
 import { vMaska } from 'maska'
+import { GoogleMap, Marker } from 'vue3-google-map'
 
 const address = ref([])
 const search = ref('')
+const center = ref({})
 
 async function onReadCEP(event) {
   await readCEP(event).then((response) => {
     address.value = response
+    center.value = {
+      lat: parseFloat(address.value.location.coordinates.latitude),
+      lng: parseFloat(address.value.location.coordinates.longitude)
+    }
+    console.log(center.value)
   })
 }
 </script>
@@ -115,9 +125,7 @@ body {
 
 .card .back {
   transform: rotateY(180deg);
-  background-color: #e0e0e0;
   color: #333;
-  padding: 20px;
   z-index: 1;
 }
 .field {

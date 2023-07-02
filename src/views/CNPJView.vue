@@ -89,7 +89,7 @@
 
         <div class="block-9">
           <p>COMPLEMENTO</p>
-          <p class="bold">{{ cnpj.complemento }}</p>
+          <p class="bold">{{ cnpj.complemento || 'Não informado' }}</p>
         </div>
       </div>
 
