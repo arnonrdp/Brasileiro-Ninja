@@ -5,14 +5,14 @@
     A geolocalização dos CEPs estão suscetíveis a erros, pois as coordenadas são provindas do OpenStreetMap. Caso encontre algum erro você
     poderá corrigir no próprio OpenStreetMap que será refletido no CEP V2.
   </h3>
-  <BaseInput v-model="search" @search="onReadCEP" />
+  <BaseInput :length="9" mask="#####-###" v-model="search" @search="onReadCEP" />
   <div v-if="Object.keys(address).length > 0" class="card">
     <!-- PARTE DA FRENTE -->
     <div class="card-content">
       <div class="front">
         <div class="field">
           <div class="label">Cep:</div>
-          <div class="value">{{ address.cep }}</div>
+          <div class="value" v-maska="'#####-##'" data-maska="address.cep">{{ address.cep }}</div>
         </div>
 
         <div class="field">
@@ -38,7 +38,14 @@
 
       <!-- PARTE DE TRAS -->
       <div class="back">
-        <p>Hello World</p>
+        <div class="back">
+          <div class="map-container" ref="map"></div>
+        </div>
+        <p>
+          {{ address.location.coordinates.longitude }}
+          <br />
+          {{ address.location.coordinates.latitude }}
+        </p>
       </div>
     </div>
   </div>
@@ -48,12 +55,13 @@
 import BaseInput from '@/components/BaseInput.vue'
 import { readCEP } from '@/model/services'
 import { ref } from 'vue'
+import { vMaska } from 'maska'
 
 const address = ref([])
 const search = ref('')
 
-async function onReadCEP() {
-  await readCEP(search.value).then((response) => {
+async function onReadCEP(event) {
+  await readCEP(event).then((response) => {
     address.value = response
   })
 }
