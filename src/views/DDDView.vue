@@ -17,8 +17,12 @@
     </thead>
     <tbody>
       <tr>
-        <td>{{ ddd.state }}</td>
-        <td>{{ ddd.cities }}</td>
+        <td class="state">{{ ddd.state }}</td>
+        <td>
+          <template v-for="city in ddd.cities.split(',')" :key="city">
+            <td class="city">{{ city }}</td>
+          </template>
+        </td>
       </tr>
     </tbody>
   </table>
@@ -63,5 +67,18 @@ async function onReadDDD(event) {
   padding: 10px;
   text-align: center;
   border-bottom: 1px solid #ddd;
+}
+
+.my-table tbody tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+.state {
+  font-size: 20px;
+}
+
+.city {
+  display: flex;
+  flex-direction: column;
 }
 </style>
