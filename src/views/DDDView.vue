@@ -8,7 +8,7 @@
   </h3>
   <BaseInput :length="2" v-model="search" @search="onReadDDD" />
 
-  <table class="my-table">
+  <table v-if="Object.keys(ddd).length > 0" class="my-table">
     <thead>
       <tr>
         <th>Estado</th>
