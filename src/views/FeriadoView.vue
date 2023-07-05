@@ -11,7 +11,7 @@
 
       <div v-for="(event, j) in events" :key="j">
         <div v-if="event.month == parseInt(Object.keys(month)[0])" class="holidays">
-          {{ Object.keys(event.name)[0] }} - {{ Object.values(event.name)[0] }}
+          Dia {{ Object.keys(event.name)[0] }} - {{ Object.values(event.name)[0] }}
         </div>
       </div>
     </div>
@@ -78,7 +78,7 @@ body {
   flex-basis: 25%;
   width: 200px;
   height: 200px;
-  border: 1px solid #000;
+  border: 1px solid #777777;
   text-align: center;
 }
 
