@@ -1,6 +1,6 @@
 <template>
   <form @submit.prevent="search">
-    <input autofocus placeholder="Pesquisar" v-model="value" v-maska="bindedObject" :data-maska="mask" />
+    <input autofocus :placeholder="placeholder" v-model="value" v-maska="bindedObject" :data-maska="mask" />
     <button type="submit" :disabled="value.length !== length">&#128269;</button>
   </form>
 </template>
@@ -9,7 +9,12 @@
 import { computed, reactive } from 'vue'
 import { vMaska } from 'maska'
 
-const props = defineProps(['modelValue', 'length', 'mask'])
+const props = defineProps({
+  modelValue: { type: String, required: true, default: '' },
+  length: { type: Number, required: false },
+  mask: { type: String, required: false },
+  placeholder: { type: String, required: false, default: 'Pesquisar' }
+})
 const emit = defineEmits(['update:modelValue', 'search'])
 const bindedObject = reactive({})
 

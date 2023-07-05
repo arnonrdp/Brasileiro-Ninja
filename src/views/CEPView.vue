@@ -5,7 +5,7 @@
     A geolocalização dos CEPs estão suscetíveis a erros, pois as coordenadas são provindas do OpenStreetMap. Caso encontre algum erro você
     poderá corrigir no próprio OpenStreetMap que será refletido no CEP V2.
   </h3>
-  <BaseInput :length="9" mask="#####-###" v-model="search" @search="onReadCEP" />
+  <BaseInput :length="9" mask="#####-###" v-model="search" @search="onReadCEP" placeholder="Insira o CEP" />
   <div v-if="Object.keys(address).length > 0" class="card">
     <!-- PARTE DA FRENTE -->
     <div class="card-content">

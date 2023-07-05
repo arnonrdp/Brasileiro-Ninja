@@ -5,7 +5,7 @@
     O Cadastro Nacional da Pessoa Jurídica (CNPJ) é um número único que identifica uma pessoa jurídica e outros tipos de arranjo jurídico
     sem personalidade jurídica junto à Receita Federal.
   </h3>
-  <BaseInput :length="18" mask="##.###.###/####-##" v-model="search" @search="onReadCNPJ" />
+  <BaseInput :length="18" mask="##.###.###/####-##" v-model="search" @search="onReadCNPJ" placeholder="Insira o CNPJ" />
 
   <div v-if="Object.keys(cnpj).length > 0" class="card">
     <div class="header">
