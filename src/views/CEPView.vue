@@ -39,16 +39,17 @@
       <!-- PARTE DE TRAS -->
       <div class="back">
         <!-- Adicionar estilo -->
-        <GoogleMap
-          v-if="Object.keys(address.location.coordinates).length > 0"
-          api-key="AIzaSyAF-u6-H1EXcUchy3j0sKxeVQykTwNhHbk"
-          style="width: 100%; height: 100%"
-          :center="center"
-          :zoom="15"
-        >
-          <Marker :options="{ position: center }" />
-        </GoogleMap>
-        <p v-else>Coordenadas Indisponíveis</p>
+        <div class="back-address">
+          <GoogleMap
+            v-if="Object.keys(address.location.coordinates).length > 0"
+            api-key="AIzaSyAF-u6-H1EXcUchy3j0sKxeVQykTwNhHbk"
+            :center="center"
+            :zoom="15"
+          >
+            <Marker :options="{ position: center }" />
+          </GoogleMap>
+          <p class="sem-coordenadas" v-else>Coordenadas Indisponíveis</p>
+        </div>
       </div>
     </div>
   </div>
@@ -59,7 +60,7 @@ import BaseInput from '@/components/BaseInput.vue'
 import { readCEP } from '@/model/services'
 import { ref } from 'vue'
 import { vMaska } from 'maska'
-import { GoogleMap, Marker } from 'vue3-google-map'
+// import { GoogleMap, Marker } from 'vue3-google-map'  não ta importando nada
 
 const address = ref([])
 const search = ref('')
@@ -142,5 +143,16 @@ body {
 .value {
   margin: 8px 0;
   font-size: 20px;
+}
+.back-address {
+  width: 100%;
+  height: 100%;
+}
+
+.sem-coordenadas {
+  font-weight: 700;
+  text-align: center;
+  font-size: larger;
+  margin-top: 110px;
 }
 </style>
