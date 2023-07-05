@@ -13,3 +13,11 @@ export async function readCEP(cep) {
 export async function readCNPJ(cnpj) {
   return await axios.get(`${baseUrl}/cnpj/v1/${cnpj}`).then((response) => response.data)
 }
+
+export async function readDDD(ddd) {
+  return await axios.get(`${baseUrl}/ddd/v1/${ddd}`).then((response) => response.data)
+}
+
+export async function readHoliday(ano) {
+  return await axios.get(`${baseUrl}/feriados/v1/${ano}`).then((response) => response.data)
+}
