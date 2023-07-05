@@ -27,6 +27,11 @@ const router = createRouter({
       path: '/ddd',
       name: 'ddd',
       component: () => import('../views/DDDView.vue')
+    },
+    {
+      path: '/feriados',
+      name: 'feriados',
+      component: () => import('../views/FeriadoView.vue')
     }
   ]
 })

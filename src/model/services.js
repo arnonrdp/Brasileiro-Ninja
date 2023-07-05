@@ -17,3 +17,7 @@ export async function readCNPJ(cnpj) {
 export async function readDDD(ddd) {
   return await axios.get(`${baseUrl}/ddd/v1/${ddd}`).then((response) => response.data)
 }
+
+export async function readHoliday(ano) {
+  return await axios.get(`${baseUrl}/feriados/v1/${ano}`).then((response) => response.data)
+}

@@ -1,6 +1,6 @@
 <template>
   <h1>DDD</h1>
-  <h2>Informações relacionadas a DDDs</h2>
+  <h2>Retorna estado e lista de cidades por DDD</h2>
   <h3>
     DDD significa Discagem Direta à Distância. É um sistema de ligação telefônica automática entre diferentes áreas urbanas nacionais. O DDD
     é um código constituído por 2 dígitos que identificam as principais cidades do país e devem ser adicionados ao nº de telefone,
@@ -52,6 +52,7 @@ async function onReadDDD(event) {
 .my-table {
   width: 100%;
   border-collapse: collapse;
+  border: 1px solid #ddd;
 }
 
 .my-table thead {
@@ -64,17 +65,15 @@ async function onReadDDD(event) {
   border-bottom: 1px solid #ddd;
 }
 .my-table td {
-  padding: 10px;
+  padding: 5px;
   text-align: center;
   border-bottom: 1px solid #ddd;
-}
-
-.my-table tbody tr:nth-child(even) {
-  background-color: #f2f2f2;
+  height: 28px;
 }
 
 .state {
   font-size: 20px;
+  border: 1px solid #ddd;
 }
 
 .city {
