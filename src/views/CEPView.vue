@@ -60,7 +60,7 @@ import BaseInput from '@/components/BaseInput.vue'
 import { readCEP } from '@/model/services'
 import { ref } from 'vue'
 import { vMaska } from 'maska'
-// import { GoogleMap, Marker } from 'vue3-google-map'  não ta importando nada
+import { GoogleMap, Marker } from 'vue3-google-map'
 
 const address = ref([])
 const search = ref('')
