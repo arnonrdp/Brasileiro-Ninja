@@ -1,9 +1,9 @@
 <template>
-    <h1>Pix</h1>
-    <h2>Informações referentes ao PIX</h2>
-    <h3>Retorna informações de todos os participantes do PIX no dia atual ou anterior</h3>
-    <BaseInput v-model.trim="search" />
-    <table class="my-table">
+  <h1>Pix</h1>
+  <h2>Informações referentes ao PIX</h2>
+  <h3>Retorna informações de todos os participantes do PIX no dia atual ou anterior</h3>
+  <BaseInput v-model.trim="search" />
+  <table class="my-table">
       <thead>
         <tr>
           <th>ISPB</th>
@@ -22,50 +22,51 @@
           <td>{{ instituicao.inicio_operacao }}</td></tr>
       </tbody>
     </table>
-  </template>
-  
-  <script setup>
-  import BaseInput from '@/components/BaseInput.vue'
-  import { readPix } from '@/model/services'
-  import { computed, onMounted, ref } from 'vue'
-  
-  const instituicoes = ref([])
-  const search = ref('')
-  
-  onMounted(async () => {
-    await readPix().then((response) => {
-      instituicoes.value = response
+</template>
+
+<script setup>
+import BaseInput from '@/components/BaseInput.vue'
+import { readPix } from '@/model/services'
+import { computed, onMounted, ref } from 'vue'
+
+const instituicoes = ref([])
+const search = ref('')
+
+onMounted(async () => {
+  await readPix().then((response) => {
+    instituicoes.value = response
+  })
+})
+
+const computedPix = computed(() => {
+  return instituicoes.value.filter((pix) => {
+    return [pix.ispb, pix.nome, pix.modalidade_participacao, pix.tipo_participacao, pix.inicio_operacao].some((value) => {
+      return value?.toString()?.toLowerCase().includes(search.value.toLowerCase())
     })
   })
-  
-  const computedPix = computed(() => {
-    return instituicoes.value.filter((pix) => {
-      return [pix.ispb, pix.nome, pix.modalidade_participacao, pix.tipo_participacao, pix.inicio_operacao].some((value) => {
-        return value?.toString()?.toLowerCase().includes(search.value.toLowerCase())
-      })
-    })
-  })
-  </script>
-  
-  <style>
+})
+</script>
+
+<style>
   .my-table {
     width: 100%;
     border-collapse: collapse;
   }
-  
+
   .my-table thead {
     background-color: #f5f5f5;
   }
-  
+
   .my-table th,
   .my-table td {
     padding: 8px;
     text-align: left;
     border-bottom: 1px solid #ddd;
   }
-  
+
   .my-table tbody tr:nth-child(even) {
     background-color: #f2f2f2;
   }
-  </style>
-  
+
+
+</style>
