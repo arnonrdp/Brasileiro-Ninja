@@ -111,7 +111,7 @@ nav a:first-child {
   }
 }
 
-@media (max-width: 600px) {
+@media (max-width: 760px) {
   .logo {
     display: none;
   }

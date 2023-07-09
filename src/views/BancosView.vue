@@ -72,7 +72,7 @@ const computedBanks = computed(() => {
   background-color: #f2f2f2;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 760px) {
   .container {
     padding: 0;
   }

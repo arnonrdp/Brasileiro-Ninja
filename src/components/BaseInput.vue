@@ -74,7 +74,7 @@ button {
   width: 4.5rem;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 760px) {
   .form-container {
     margin: 1rem auto;
     max-width: 100%;
