@@ -1,13 +1,13 @@
 <template>
+  <button v-if="!isSidebarOpen" class="sidebar-toggle" @click="toggleSidebar">
+    <img alt="Menu" class="menu" src="public/icons/menuSideBar.svg" />
+  </button>
   <aside :class="{ 'sidebar-open': isSidebarOpen }">
     <div class="sidebar-content">
-      <RouterLink to="/">
-        <img alt="Logo" class="logo" src="/logo.svg" />
-      </RouterLink>
-      <button v-if="!isSidebarOpen" class="sidebar-toggle" @click="toggleSidebar">
-        <img alt="Menu" class="menu" src="public/icons/menuSideBar.svg" />
-      </button>
       <nav>
+        <RouterLink to="/">
+          <img alt="Logo" class="logo" src="/logo.svg" />
+        </RouterLink>
         <RouterLink v-if="isSidebarOpen" to="/" @click="closeSidebar">Home</RouterLink>
         <RouterLink to="/bancos" @click="closeSidebar">Bancos</RouterLink>
         <RouterLink to="/cep" @click="closeSidebar">CEP</RouterLink>
@@ -15,7 +15,6 @@
         <RouterLink to="/ddd" @click="closeSidebar">DDD</RouterLink>
         <RouterLink to="/feriados" @click="closeSidebar">Feriados Nacionais</RouterLink>
       </nav>
-      <button v-if="isSidebarOpen" class="close-sidebar" @click="toggleSidebar">X</button>
     </div>
   </aside>
 </template>
@@ -60,8 +59,7 @@ aside {
   border: none;
   cursor: pointer;
   top: 0;
-  left: 0;
-  padding: 1rem;
+  right: 0;
   position: absolute;
 }
 
@@ -107,6 +105,12 @@ nav a:first-child {
   display: block;
 }
 
+@media (hover: hover) {
+  a:hover {
+    background-color: hsla(160, 100%, 37%, 0.2);
+  }
+}
+
 @media (max-width: 600px) {
   .logo {
     display: none;
@@ -118,10 +122,13 @@ nav a:first-child {
   aside {
     width: 100%;
     background-color: #fff;
+    z-index: 10;
   }
 
   .sidebar-open {
     width: 100%;
+    position: fixed;
+    overflow-y: hidden;
   }
 
   nav {

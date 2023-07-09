@@ -2,24 +2,26 @@
   <h1>Bancos</h1>
   <h2>Informações de todos os bancos do Brasil</h2>
   <BaseInput v-model.trim="search" />
-  <table class="my-table">
-    <thead>
-      <tr>
-        <th>Código</th>
-        <th>Nome</th>
-        <th>Razão Social</th>
-        <th>ISPB</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr v-for="bank in computedBanks" :key="bank.code">
-        <td>{{ bank.code }}</td>
-        <td>{{ bank.name }}</td>
-        <td>{{ bank.fullName }}</td>
-        <td>{{ bank.ispb }}</td>
-      </tr>
-    </tbody>
-  </table>
+  <div class="container">
+    <table class="my-table">
+      <thead>
+        <tr>
+          <th>Código</th>
+          <th>Nome</th>
+          <th>Razão Social</th>
+          <th>ISPB</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr v-for="bank in computedBanks" :key="bank.code">
+          <td>{{ bank.code }}</td>
+          <td>{{ bank.name }}</td>
+          <td>{{ bank.fullName }}</td>
+          <td>{{ bank.ispb }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
 </template>
 
 <script setup>
@@ -46,6 +48,10 @@ const computedBanks = computed(() => {
 </script>
 
 <style>
+.container {
+  max-width: 100%;
+  padding: 0 1rem;
+}
 .my-table {
   width: 100%;
   border-collapse: collapse;
@@ -64,5 +70,11 @@ const computedBanks = computed(() => {
 
 .my-table tbody tr:nth-child(even) {
   background-color: #f2f2f2;
+}
+
+@media (max-width: 600px) {
+  .container {
+    padding: 0;
+  }
 }
 </style>
