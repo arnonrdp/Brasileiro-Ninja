@@ -5,10 +5,7 @@
   <aside :class="{ 'sidebar-open': isSidebarOpen }">
     <div class="sidebar-content">
       <nav>
-        <RouterLink to="/">
-          <img alt="Logo" class="logo" src="/logo.svg" />
-        </RouterLink>
-        <RouterLink v-if="isSidebarOpen" to="/" @click="closeSidebar">Home</RouterLink>
+        <RouterLink to="/" @click="closeSidebar"><img alt="Logo" class="logo" src="/logo.svg" /></RouterLink>
         <RouterLink to="/bancos" @click="closeSidebar">Bancos</RouterLink>
         <RouterLink to="/cep" @click="closeSidebar">CEP</RouterLink>
         <RouterLink to="/cnpj" @click="closeSidebar">CNPJ</RouterLink>
@@ -24,6 +21,7 @@ import { ref } from 'vue'
 import { RouterLink } from 'vue-router'
 
 const isSidebarOpen = ref(false)
+
 const toggleSidebar = () => {
   isSidebarOpen.value = !isSidebarOpen.value
 }
@@ -112,9 +110,6 @@ nav a:first-child {
 }
 
 @media (max-width: 760px) {
-  .logo {
-    display: none;
-  }
   .sidebar-toggle {
     display: block;
   }
