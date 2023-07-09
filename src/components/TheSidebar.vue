@@ -9,6 +9,9 @@
       <RouterLink to="/cnpj">CNPJ</RouterLink>
       <RouterLink to="/ddd">DDD</RouterLink>
       <RouterLink to="/feriados">Feriados Nacionais</RouterLink>
+      <RouterLink to="/pix">Pix</RouterLink>
+      <RouterLink to="/registro">Registro BR</RouterLink>
+
     </nav>
   </aside>
 </template>

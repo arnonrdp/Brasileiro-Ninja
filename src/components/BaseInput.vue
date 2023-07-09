@@ -1,7 +1,7 @@
 <template>
   <form @submit.prevent="search">
     <input autofocus :placeholder="placeholder" v-model="value" v-maska="bindedObject" :data-maska="mask" />
-    <button type="submit" :disabled="value.length !== length">&#128269;</button>
+    <button type="submit" :disabled="length ? value.length !== length : false">&#128269;</button>
   </form>
 </template>
 

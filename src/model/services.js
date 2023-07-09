@@ -21,3 +21,10 @@ export async function readDDD(ddd) {
 export async function readHoliday(ano) {
   return await axios.get(`${baseUrl}/feriados/v1/${ano}`).then((response) => response.data)
 }
+export async function readPix() {
+  return await axios.get(`${baseUrl}/pix/v1/participants`).then((response) => response.data)
+}
+export async function readRegistro(dominio) {
+  return await axios.get(`${baseUrl}/registrobr/v1/${dominio}`).then((response) => response.data)
+}
+
