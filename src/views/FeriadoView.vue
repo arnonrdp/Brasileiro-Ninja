@@ -3,12 +3,16 @@
   <h2>Lista os feriados nacionais de determinado ano</h2>
   <h3>Calcula os feriados móveis baseados na Páscoa e adiciona os feriados fixos</h3>
 
-  <BaseInput :length="4" v-model="search" @search="onReadHoliday" />
-  <div v-for="(month, i) in months" :key="i">
-    {{ month[i + 1] }}
-    <div v-for="(event, j) in events" :key="j">
-      <div v-if="event.month == parseInt(Object.keys(month)[0])">
-        {{ event.name }}
+  <BaseInput :length="4" v-model="search" @search="onReadHoliday" placeholder="Insira o ano desejado" />
+
+  <div class="wrap row" v-if="Object.keys(ano).length > 0">
+    <div v-for="(month, i) in months" :key="i" class="block-1">
+      <p class="month">{{ month[i + 1] }}</p>
+
+      <div v-for="(event, j) in events" :key="j">
+        <div v-if="event.month == parseInt(Object.keys(month)[0])" class="holidays">
+          Dia {{ Object.keys(event.name)[0] }} - {{ Object.values(event.name)[0] }}
+        </div>
       </div>
     </div>
   </div>
@@ -40,6 +44,8 @@ const months = [
 async function onReadHoliday(event) {
   await readHoliday(event).then((response) => {
     ano.value = response
+    events.value = []
+
     for (let item of ano.value) {
       let day = item.date.split('-')[2]
       let mes = item.date.split('-')[1]
@@ -60,19 +66,33 @@ body {
 
 .wrap {
   display: flex;
-  /* padding: 0.8%; */
+  padding: 0.6%;
   justify-content: center;
   text-align: center;
+  flex-direction: row;
 }
-
+.row {
+  flex-wrap: wrap;
+}
 .block-1 {
+  flex-basis: 25%;
   width: 200px;
   height: 200px;
-  border: 1px solid #000;
+  border: 1px solid #777777;
   text-align: center;
 }
 
 .month {
-  background-color: #d9d9d9;
+  border-bottom: 1px solid #000;
+  background-color: rgb(241, 118, 118);
+  font-size: 18px;
+  color: #fff;
+}
+
+.holidays {
+  display: flex;
+  justify-content: start;
+  padding: 5px;
+  font-size: 16px;
 }
 </style>

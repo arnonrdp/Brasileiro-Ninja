@@ -5,7 +5,7 @@
     A geolocalização dos CEPs estão suscetíveis a erros, pois as coordenadas são provindas do OpenStreetMap. Caso encontre algum erro você
     poderá corrigir no próprio OpenStreetMap que será refletido no CEP V2.
   </h3>
-  <BaseInput :length="9" mask="#####-###" v-model="search" @search="onReadCEP" />
+  <BaseInput :length="9" mask="#####-###" v-model="search" @search="onReadCEP" placeholder="Insira o CEP" />
   <div v-if="Object.keys(address).length > 0" class="card">
     <!-- PARTE DA FRENTE -->
     <div class="card-content">
@@ -39,16 +39,17 @@
       <!-- PARTE DE TRAS -->
       <div class="back">
         <!-- Adicionar estilo -->
-        <GoogleMap
-          v-if="Object.keys(address.location.coordinates).length > 0"
-          api-key="AIzaSyAF-u6-H1EXcUchy3j0sKxeVQykTwNhHbk"
-          style="width: 100%; height: 100%"
-          :center="center"
-          :zoom="15"
-        >
-          <Marker :options="{ position: center }" />
-        </GoogleMap>
-        <p v-else>Coordenadas Indisponíveis</p>
+        <div class="back-address">
+          <GoogleMap
+            v-if="Object.keys(address.location.coordinates).length > 0"
+            api-key="AIzaSyAF-u6-H1EXcUchy3j0sKxeVQykTwNhHbk"
+            :center="center"
+            :zoom="15"
+          >
+            <Marker :options="{ position: center }" />
+          </GoogleMap>
+          <p class="sem-coordenadas" v-else>Coordenadas Indisponíveis</p>
+        </div>
       </div>
     </div>
   </div>
@@ -142,5 +143,16 @@ body {
 .value {
   margin: 8px 0;
   font-size: 20px;
+}
+.back-address {
+  width: 100%;
+  height: 100%;
+}
+
+.sem-coordenadas {
+  font-weight: 700;
+  text-align: center;
+  font-size: larger;
+  margin-top: 110px;
 }
 </style>

@@ -6,7 +6,7 @@
     é um código constituído por 2 dígitos que identificam as principais cidades do país e devem ser adicionados ao nº de telefone,
     juntamente com o código da operadora.
   </h3>
-  <BaseInput :length="2" v-model="search" @search="onReadDDD" />
+  <BaseInput :length="2" v-model="search" @search="onReadDDD" placeholder="Insira o DDD" />
 
   <table v-if="Object.keys(ddd).length > 0" class="my-table">
     <thead>
