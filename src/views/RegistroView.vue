@@ -52,7 +52,9 @@
 
         <div class="field">
           <div class="label">Hosts:</div>
-          <div class="value">{{ registro.hosts }}</div>
+          <div class="value">
+            <div v-for="host in registro.hosts" :key="host">&bullet; {{ host }}</div>
+          </div>
         </div>
       </div>
     </div>
