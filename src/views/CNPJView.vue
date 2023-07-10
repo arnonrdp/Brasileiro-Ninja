@@ -201,7 +201,7 @@ body {
   width: 15%;
   height: 10%;
   float: left;
-  padding-top: 35px;
+  padding-top: 2.1875rem;
 }
 
 .title {
@@ -209,12 +209,12 @@ body {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  padding: 20px;
-  margin-left: 130px;
+  padding: 1.25rem;
+  margin-left: 8.75rem;
 }
 
 .title h1 {
-  padding-bottom: 40px;
+  padding-bottom: 2.5rem;
 }
 
 .wrap {
@@ -228,48 +228,48 @@ body {
   width: 30%;
   border: 2px solid #000;
   text-align: start;
-  padding-left: 10px;
+  padding-left: 0.625rem;
 }
 
 .block-2 {
   border: 2px solid #000;
-  font-size: 25px;
+  font-size: 1.5625rem;
 }
 
 .block-3 {
   border: 2px solid #000;
   width: 30%;
   text-align: start;
-  padding-left: 10px;
+  padding-left: 0.625rem;
 }
 
 .block-4 {
   border: 2px solid #000;
   width: 100%;
   text-align: start;
-  padding-left: 10px;
+  padding-left: 0.625rem;
 }
 
 .block-5 {
   border: 2px solid #000;
   width: 92%;
   text-align: start;
-  padding-left: 10px;
+  padding-left: 0.625rem;
 }
 
 .block-6 {
   border: 2px solid #000;
   width: 8%;
   text-align: start;
-  padding-left: 10px;
-  margin-left: 20px;
+  padding-left: 0.625rem;
+  margin-left: 1.25rem;
 }
 
 .block-7 {
   border: 2px solid #000;
   width: 50%;
   text-align: start;
-  padding-left: 10px;
+  padding-left: 0.625rem;
   height: min-content;
 }
 
@@ -278,29 +278,29 @@ body {
   width: 7%;
   text-align: start;
   margin: 0 20px;
-  padding-left: 10px;
-  padding-right: 10px;
+  padding-left: 0.625rem;
+  padding-right: 0.625rem;
 }
 
 .block-9 {
   border: 2px solid #000;
   width: 43%;
   text-align: start;
-  padding-left: 10px;
-  height: min-content;
+  padding-left: 0.625rem;
+  height: auto;
 }
 .block-10 {
   border: 2px solid #000;
   width: 19.5%;
   text-align: start;
-  padding-left: 10px;
+  padding-left: 0.625rem;
 }
 
 .block-11 {
   border: 2px solid #000;
   width: 30%;
   text-align: start;
-  padding-left: 10px;
+  padding-left: 0.625rem;
   margin: 0 20px;
 }
 
@@ -308,31 +308,31 @@ body {
   border: 2px solid #000;
   width: 43%;
   text-align: start;
-  padding-left: 10px;
+  padding-left: 0.625rem;
 }
 
 .block-13 {
   border: 2px solid #000;
   width: 8%;
   text-align: start;
-  padding-left: 10px;
-  margin-left: 20px;
+  padding-left: 0.625rem;
+  margin-left: 1.25rem;
 }
 
 .block-14 {
   border: 2px solid #000;
   width: 49.4%;
   text-align: start;
-  padding-left: 10px;
+  padding-left: 0.625rem;
   height: min-content;
-  margin-right: 18px;
+  margin-right: 1.125rem;
 }
 
 .block-15 {
   border: 2px solid #000;
   width: 50.6%;
   text-align: start;
-  padding-left: 10px;
+  padding-left: 0.625rem;
   height: min-content;
 }
 
@@ -340,23 +340,23 @@ body {
   border: 2px solid #000;
   width: 70%;
   text-align: start;
-  padding-left: 10px;
-  margin-right: 20px;
+  padding-left: 0.625rem;
+  margin-right: 1.25rem;
 }
 
 .block-17 {
   border: 2px solid #000;
   width: 30%;
   text-align: start;
-  padding-left: 10px;
+  padding-left: 0.625rem;
 }
 
 .block-18 {
   border: 2px solid #000;
   width: 100%;
   text-align: start;
-  padding-left: 10px;
-  height: 70px;
+  padding-left: 0.625rem;
+  height: auto;
 }
 
 .bold {

@@ -76,10 +76,15 @@ body {
 }
 .block-1 {
   flex-basis: 25%;
-  width: 200px;
+  flex-grow: 1;
+  flex-shrink: 1;
   height: 200px;
   border: 1px solid #777777;
   text-align: center;
+  box-sizing: border-box;
+  padding: 10px;
+  margin: 5px;
+  overflow: hidden;
 }
 
 .month {
@@ -94,5 +99,18 @@ body {
   justify-content: start;
   padding: 5px;
   font-size: 16px;
+}
+
+@media (max-width: 820px) {
+  .block-1 {
+    flex-basis: 33.3333%;
+  }
+}
+
+@media (max-width: 540px) {
+  .block-1 {
+    flex-basis: 50%;
+    height: 250px;
+  }
 }
 </style>
