@@ -11,6 +11,8 @@
         <RouterLink to="/cnpj" @click="closeSidebar">CNPJ</RouterLink>
         <RouterLink to="/ddd" @click="closeSidebar">DDD</RouterLink>
         <RouterLink to="/feriados" @click="closeSidebar">Feriados Nacionais</RouterLink>
+        <RouterLink to="/pix" @click="closeSidebar">Pix</RouterLink>
+        <RouterLink to="/registro" @click="closeSidebar">Registro BR</RouterLink>
       </nav>
     </div>
   </aside>
@@ -109,7 +111,7 @@ nav a:first-child {
   }
 }
 
-@media (max-width: 760px) {
+@media (max-width: 820px) {
   .sidebar-toggle {
     display: block;
   }
