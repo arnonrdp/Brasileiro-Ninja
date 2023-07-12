@@ -34,25 +34,6 @@ const closeSidebar = () => {
 </script>
 
 <style scoped>
-img {
-  display: block;
-  margin: 0 auto;
-  padding: 1rem 0;
-  width: 10rem;
-}
-
-.sidebar-content {
-  display: flex;
-  flex-direction: column;
-  position: relative;
-}
-
-aside {
-  background-color: rgb(250, 250, 250);
-  height: 100vh;
-  width: 15rem;
-}
-
 .sidebar-toggle {
   display: none;
   background: none;
@@ -64,8 +45,32 @@ aside {
 }
 
 .sidebar-open {
-  width: 100%;
+  position: fixed;
+  left: 250px;
+  width: 0;
+  height: 100%;
+  margin-left: -250px;
+  background: white;
+  transition: all 0.8s ease;
+}
+
+.sidebar-content {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  transition: all 0.8s ease;
+}
+
+aside {
   background-color: rgb(250, 250, 250);
+  height: 100vh;
+  width: 15rem;
+}
+img {
+  display: block;
+  margin: 0 auto;
+  padding: 1rem 0;
+  width: 10rem;
 }
 
 nav {
@@ -84,25 +89,6 @@ nav a {
 
 nav a:first-child {
   border-top: 0.1px solid #ccc;
-}
-
-.close-sidebar {
-  display: none;
-  background: none;
-  border: 1px solid #000;
-  border-radius: 100%;
-  cursor: pointer;
-  position: absolute;
-  bottom: -3.5rem;
-  left: 1rem;
-  width: 2.5rem;
-  height: 2.5rem;
-  line-height: 2.5rem;
-  text-align: center;
-}
-
-.sidebar-open .close-sidebar {
-  display: block;
 }
 
 @media (hover: hover) {

@@ -278,8 +278,8 @@ body {
   width: 7%;
   text-align: start;
   margin: 0 20px;
-  padding-left: 0.625rem;
-  padding-right: 0.625rem;
+  padding-left: 0.425rem;
+  padding-right: 0.75rem;
 }
 
 .block-9 {
