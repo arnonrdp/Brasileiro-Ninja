@@ -11,7 +11,7 @@
       <RouterLink to="/feriados">Feriados Nacionais</RouterLink>
       <RouterLink to="/pix">Pix</RouterLink>
       <RouterLink to="/registro">Registro BR</RouterLink>
-
+      <RouterLink to="/corretoras">Corretoras</RouterLink>
     </nav>
   </aside>
 </template>
