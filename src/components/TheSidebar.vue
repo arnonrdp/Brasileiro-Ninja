@@ -2,7 +2,7 @@
   <button v-if="!isSidebarOpen" class="sidebar-toggle" @click="toggleSidebar">
     <img alt="Menu" class="menu" src="/icons/menuSideBar.svg" />
   </button>
-  <aside :class="{ 'sidebar-open': isSidebarOpen }">
+  <aside :class="{ 'sidebar-open': isSidebarOpen, 'sidebar-close': !isSidebarOpen }">
     <div class="sidebar-content">
       <nav>
         <RouterLink to="/" @click="closeSidebar"><img alt="Logo" class="logo" src="/logo.svg" /></RouterLink>
@@ -51,14 +51,13 @@ const closeSidebar = () => {
   height: 100%;
   margin-left: -250px;
   background: white;
-  transition: all 0.8s ease;
+  transition: all 0.8s ease-in-out;
 }
 
 .sidebar-content {
   display: flex;
   flex-direction: column;
   position: relative;
-  transition: all 0.8s ease;
 }
 
 aside {
@@ -112,6 +111,15 @@ nav a:first-child {
     width: 100%;
     position: fixed;
     overflow-y: hidden;
+  }
+
+  .sidebar-close {
+    position: fixed;
+    left: 250px;
+    width: 0;
+    margin-left: 150px;
+    background: rgb(251, 250, 250);
+    transition: all 0.6s ease-out;
   }
 
   nav {
