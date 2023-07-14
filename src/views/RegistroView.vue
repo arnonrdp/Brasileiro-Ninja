@@ -64,12 +64,10 @@ body {
   border-radius: 8px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   max-width: 400px;
-  height: 330px;
+  height: auto;
   display: flex;
-  margin: 20px auto;
-  padding: 20px;
-  perspective: 1000px;
-  cursor: pointer;
+  margin: 0 auto;
+  padding: 10px;
   text-align: center;
 }
 .field {
