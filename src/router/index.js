@@ -42,6 +42,11 @@ const router = createRouter({
       path: '/registro',
       name: 'registro',
       component: () => import('../views/RegistroView.vue')
+    },
+    {
+      path: '/fipe',
+      name: 'fipe',
+      component: () => import('../views/FipeView.vue')
     }
   ]
 })

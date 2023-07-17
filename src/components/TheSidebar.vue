@@ -13,6 +13,7 @@
         <RouterLink to="/feriados" @click="closeSidebar">Feriados Nacionais</RouterLink>
         <RouterLink to="/pix" @click="closeSidebar">Pix</RouterLink>
         <RouterLink to="/registro" @click="closeSidebar">Registro BR</RouterLink>
+        <RouterLink to="/fipe" @click="closeSidebar">Tabela Fipe</RouterLink>
       </nav>
     </div>
   </aside>
