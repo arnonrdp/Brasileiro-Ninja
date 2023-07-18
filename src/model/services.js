@@ -30,3 +30,6 @@ export async function readRegistro(dominio) {
 export async function readCorretoras() {
   return await axios.get(`${baseUrl}/cvm/corretoras/v1`).then((response) => response.data)
 }
+export async function readTaxas() {
+  return await axios.get(`${baseUrl}/taxas/v1`).then((response) => response.data)
+}
