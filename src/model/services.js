@@ -32,21 +32,37 @@ export async function readRegistro(dominio) {
 }
 
 export async function readFipeMonth() {
-  return await axios.get(`${fipeBaseUrl}/references`)
+  return await axios.get(`${fipeBaseUrl}/references`).then((response) => response.data)
 }
 
 export async function readFipeMarcas(veiculo) {
   return await axios.get(`${fipeBaseUrl}/${veiculo}/brands`).then((response) => response.data)
 }
 
-export async function readFipeModelos(veiculo, codigo) {
-  return await axios.get(`${fipeBaseUrl}/${veiculo}/brands/${codigo}/models`).then((response) => response.data)
+export async function readFipeModelos(veiculo, codigo_marca) {
+  const modelos = await axios.get(`${fipeBaseUrl}/${veiculo}/brands/${codigo_marca}/models`).then((response) => response.data)
+  const anos = await axios.get(`${fipeBaseUrl}/${veiculo}/brands/${codigo_marca}/years`).then((response) => response.data)
+  return { modelos, anos }
 }
 
 export async function readFipeAnos(veiculo, codigo, codigo_modelo) {
   return await axios.get(`${fipeBaseUrl}/${veiculo}/brands/${codigo}/models/${codigo_modelo}/years`).then((response) => response.data)
 }
 
-export async function readFipeResponse(veiculo, codigo, codigo_modelo, codigo_ano) {
-  return await axios.get(`${fipeBaseUrl}/${veiculo}/brands/${codigo}/models/${codigo_modelo}/years/${codigo_ano}`)
+export async function readFipeModelsByYears(veiculo, codigo_marca, year_code) {
+  return await axios.get(`${fipeBaseUrl}/${veiculo}/brands/${codigo_marca}/years/${year_code}/models`)
+}
+
+export async function readFipeInfo(veiculo, codigo, codigo_modelo, codigo_ano, reference_code) {
+  return await axios.get(
+    `${fipeBaseUrl}/${veiculo}/brands/${codigo}/models/${codigo_modelo}/years/${codigo_ano}?reference=${reference_code}`
+  )
+}
+
+export async function readYearsByFipeCode(veiculo, fipe_code) {
+  return await axios.get(`${fipeBaseUrl}/${veiculo}/${fipe_code}/years`).then((response) => response.data)
+}
+
+export async function readFipeInfoCode(veiculo, fipe_code, year_id) {
+  return await axios.get(`${fipeBaseUrl}/${veiculo}/${fipe_code}/years/${year_id}`).then((response) => response.data)
 }
