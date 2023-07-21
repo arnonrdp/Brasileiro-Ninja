@@ -18,7 +18,7 @@
 
     <section class="information">
       <div class="wrap">
-        <div class="block-1">
+        <div class="block-1 responsive">
           <p>NÚMERO DE INSCRIÇÃO</p>
           <p class="bold">
             {{ cnpj.cnpj }}
@@ -27,136 +27,136 @@
           </p>
         </div>
 
-        <div class="block-2">
+        <div class="block-2 responsive">
           <p class="bold">COMPROVANTE DE INSCRIÇÃO E DE SITUAÇÃO CADASTRAL</p>
         </div>
 
-        <div class="block-3">
+        <div class="block-3 responsive">
           <p>DATA DE ABERTURA</p>
           <p class="bold">{{ cnpj.data_situacao_cadastral }}</p>
         </div>
       </div>
 
       <div class="wrap">
-        <div class="block-4">
+        <div class="block-4 responsive">
           <p>NOME EMPRESARIAL</p>
           <p class="bold">{{ cnpj.razao_social }}</p>
         </div>
       </div>
 
       <div class="wrap">
-        <div class="block-5">
+        <div class="block-5 responsive">
           <p>TÍTULO DO ESTABELECIMENTO (NOME DE FANTASIA)</p>
           <p class="bold">{{ cnpj.nome_fantasia }}</p>
         </div>
-        <div class="block-6">
+        <div class="block-6 responsive">
           <p>PORTE</p>
           <p class="bold">{{ cnpj.porte }}</p>
         </div>
       </div>
 
       <div class="wrap">
-        <div class="block-4">
+        <div class="block-4 responsive">
           <p>CÓDIGO E DESCRIÇÃO DA ATIVIDADE ECONÔMICA PRINCIPAL</p>
           <p class="bold">{{ cnpj.cnae_fiscal }} - {{ cnpj.cnae_fiscal_descricao }}</p>
         </div>
       </div>
 
       <div class="wrap">
-        <div class="block-4">
+        <div class="block-4 responsive">
           <p class="bold">CÓDIGO E DESCRIÇÃO DAS ATIVIDADES ECONÔMICAS SECUNDÁRIAS</p>
           <p v-for="cnae in cnpj.cnaes_secundarios" :key="cnae.codigo" class="bold">{{ cnae.codigo }} - {{ cnae.descricao }}</p>
         </div>
       </div>
 
       <div class="wrap">
-        <div class="block-4">
+        <div class="block-4 responsive">
           <p>CÓDIGO E DESCRIÇÃO DA NATUREZA JURÍDICA</p>
           <p class="bold">{{ cnpj.codigo_natureza_juridica }} - {{ cnpj.natureza_juridica }}</p>
         </div>
       </div>
 
       <div class="wrap">
-        <div class="block-7">
+        <div class="block-7 responsive">
           <p>LOGRADOURO</p>
           <p class="bold">{{ cnpj.logradouro }}</p>
         </div>
 
-        <div class="block-8">
+        <div class="block-8 responsive">
           <p>NÚMERO</p>
           <p class="bold">{{ cnpj.numero }}</p>
         </div>
 
-        <div class="block-9">
+        <div class="block-9 responsive">
           <p>COMPLEMENTO</p>
           <p class="bold">{{ cnpj.complemento || 'Não informado' }}</p>
         </div>
       </div>
 
       <div class="wrap">
-        <div class="block-10">
+        <div class="block-10 responsive">
           <p>CEP</p>
           <p class="bold">{{ cnpj.cep }}</p>
         </div>
-        <div class="block-11">
+        <div class="block-11 responsive">
           <p>BAIRRO/DISTRITO</p>
           <p class="bold">{{ cnpj.bairro }}</p>
         </div>
 
-        <div class="block-12">
+        <div class="block-12 responsive">
           <p>MUNICÍPIO</p>
           <p class="bold">{{ cnpj.municipio }}</p>
         </div>
 
-        <div class="block-13">
+        <div class="block-13 responsive">
           <p>UF</p>
           <p class="bold">{{ cnpj.uf }}</p>
         </div>
       </div>
 
       <div class="wrap">
-        <div class="block-14">
+        <div class="block-14 responsive">
           <p>ENDEREÇO ELETRÔNICO</p>
           <p class="bold">{{ cnpj.email || 'Não informado' }}</p>
         </div>
 
-        <div class="block-15">
+        <div class="block-15 responsive">
           <p>TELEFONE</p>
           <p class="bold">{{ cnpj.ddd_telefone_1 || 'Nào informado' }} / {{ cnpj.ddd_telefone_2 || 'Não informado' }}</p>
         </div>
       </div>
 
       <div class="wrap">
-        <div class="block-4">
+        <div class="block-4 responsive">
           <p>ENTE FEDERATIVO RESPONSÁVEL (EFR)</p>
           <p class="bold">{{ cnpj.ente_federativo_responsavel || 'Não informado' }}</p>
         </div>
       </div>
 
       <div class="wrap">
-        <div class="block-16">
+        <div class="block-16 responsive">
           <p>SITUAÇÃO CADASTRAL</p>
           <p class="bold">{{ cnpj.descricao_situacao_cadastral }}</p>
         </div>
-        <div class="block-17">
+        <div class="block-17 responsive">
           <p>DATA DA SITUAÇÃO CADASTRAL</p>
           <p class="bold">{{ cnpj.data_situacao_cadastral }}</p>
         </div>
       </div>
 
       <div class="wrap">
-        <div class="block-18">
+        <div class="block-18 responsive">
           <p>MOTIVO DE SITUAÇÃO CADASTRAL</p>
           <p class="bold">{{ cnpj.motivo_situacao_cadastral }}</p>
         </div>
       </div>
 
       <div class="wrap">
-        <div class="block-16">
+        <div class="block-16 responsive">
           <p>SITUAÇÃO ESPECIAL</p>
           <p class="bold">{{ cnpj.situacao_especial || 'Não informado' }}</p>
         </div>
-        <div class="block-17">
+        <div class="block-17 responsive">
           <p>DATA DA SITUAÇÃO ESPECIAL</p>
           <p class="bold">{{ cnpj.data_situacao_especial || 'Não informado' }}</p>
         </div>
@@ -201,7 +201,7 @@ body {
   width: 15%;
   height: 10%;
   float: left;
-  padding-top: 35px;
+  padding-top: 2.1875rem;
 }
 
 .title {
@@ -209,12 +209,12 @@ body {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  padding: 20px;
-  margin-left: 130px;
+  padding: 1.25rem;
+  margin-left: 8.75rem;
 }
 
 .title h1 {
-  padding-bottom: 40px;
+  padding-bottom: 2.5rem;
 }
 
 .wrap {
@@ -228,48 +228,48 @@ body {
   width: 30%;
   border: 2px solid #000;
   text-align: start;
-  padding-left: 10px;
+  padding-left: 0.625rem;
 }
 
 .block-2 {
   border: 2px solid #000;
-  font-size: 25px;
+  font-size: 1.5625rem;
 }
 
 .block-3 {
   border: 2px solid #000;
   width: 30%;
   text-align: start;
-  padding-left: 10px;
+  padding-left: 0.625rem;
 }
 
 .block-4 {
   border: 2px solid #000;
   width: 100%;
   text-align: start;
-  padding-left: 10px;
+  padding-left: 0.625rem;
 }
 
 .block-5 {
   border: 2px solid #000;
   width: 92%;
   text-align: start;
-  padding-left: 10px;
+  padding-left: 0.625rem;
 }
 
 .block-6 {
   border: 2px solid #000;
   width: 8%;
   text-align: start;
-  padding-left: 10px;
-  margin-left: 20px;
+  padding-left: 0.625rem;
+  margin-left: 1.25rem;
 }
 
 .block-7 {
   border: 2px solid #000;
   width: 50%;
   text-align: start;
-  padding-left: 10px;
+  padding-left: 0.625rem;
   height: min-content;
 }
 
@@ -278,29 +278,29 @@ body {
   width: 7%;
   text-align: start;
   margin: 0 20px;
-  padding-left: 10px;
-  padding-right: 10px;
+  padding-left: 0.425rem;
+  padding-right: 0.75rem;
 }
 
 .block-9 {
   border: 2px solid #000;
   width: 43%;
   text-align: start;
-  padding-left: 10px;
-  height: min-content;
+  padding-left: 0.625rem;
+  height: auto;
 }
 .block-10 {
   border: 2px solid #000;
   width: 19.5%;
   text-align: start;
-  padding-left: 10px;
+  padding-left: 0.625rem;
 }
 
 .block-11 {
   border: 2px solid #000;
   width: 30%;
   text-align: start;
-  padding-left: 10px;
+  padding-left: 0.625rem;
   margin: 0 20px;
 }
 
@@ -308,31 +308,31 @@ body {
   border: 2px solid #000;
   width: 43%;
   text-align: start;
-  padding-left: 10px;
+  padding-left: 0.625rem;
 }
 
 .block-13 {
   border: 2px solid #000;
   width: 8%;
   text-align: start;
-  padding-left: 10px;
-  margin-left: 20px;
+  padding-left: 0.625rem;
+  margin-left: 1.25rem;
 }
 
 .block-14 {
   border: 2px solid #000;
   width: 49.4%;
   text-align: start;
-  padding-left: 10px;
+  padding-left: 0.625rem;
   height: min-content;
-  margin-right: 18px;
+  margin-right: 1.125rem;
 }
 
 .block-15 {
   border: 2px solid #000;
   width: 50.6%;
   text-align: start;
-  padding-left: 10px;
+  padding-left: 0.625rem;
   height: min-content;
 }
 
@@ -340,27 +340,55 @@ body {
   border: 2px solid #000;
   width: 70%;
   text-align: start;
-  padding-left: 10px;
-  margin-right: 20px;
+  padding-left: 0.625rem;
+  margin-right: 1.25rem;
 }
 
 .block-17 {
   border: 2px solid #000;
   width: 30%;
   text-align: start;
-  padding-left: 10px;
+  padding-left: 0.625rem;
 }
 
 .block-18 {
   border: 2px solid #000;
   width: 100%;
   text-align: start;
-  padding-left: 10px;
-  height: 70px;
+  padding-left: 0.625rem;
+  height: auto;
 }
 
 .bold {
   font-weight: 750;
+}
+
+@media (max-width: 820px) {
+  .header {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .header img {
+    width: 30%;
+    height: 30%;
+  }
+
+  .title {
+    margin-left: 0;
+  }
+
+  .wrap {
+    flex-direction: column;
+    padding: 2%;
+    /* width: fit-content; */
+  }
+
+  .responsive {
+    width: 100%;
+    margin: 0 0 2% 0;
+  }
 }
 </style>
 

@@ -32,6 +32,21 @@ const router = createRouter({
       path: '/feriados',
       name: 'feriados',
       component: () => import('../views/FeriadoView.vue')
+    },
+    {
+      path: '/pix',
+      name: 'pix',
+      component: () => import('../views/PixView.vue')
+    },
+    {
+      path: '/registro',
+      name: 'registro',
+      component: () => import('../views/RegistroView.vue')
+    },
+    {
+      path: '/fipe',
+      name: 'fipe',
+      component: () => import('../views/FipeView.vue')
     }
   ]
 })
