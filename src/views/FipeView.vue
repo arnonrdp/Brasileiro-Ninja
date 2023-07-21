@@ -6,8 +6,8 @@
 
   <div class="card">
     <div class="type_search">
-      <button @click="onClickShowInformation" class="btn-1">Pesquisa comum</button>
-      <button @click="onClickShowInformation2" class="btn-2">Pesquisa por código Fipe</button>
+      <button ref="btnPesquisaComum" @click="onClickShowInformation" class="btn-1">Pesquisa comum</button>
+      <button ref="btnPesquisaCodigoFipe" @click="onClickShowInformation2" class="btn-2">Pesquisa por código Fipe</button>
     </div>
     <div class="wrap_content">
       <div class="type_btn">
@@ -55,8 +55,9 @@
             <option v-for="year in fipeCodeYear" :key="year.code" :value="year.code">{{ year.name }}</option>
           </select>
         </div>
+
         <div class="submit">
-          <button type="submit" @click="onClickShowTable2">Buscar</button>
+          <button type="submit" @click="onClickShowTable2">Pesquisar</button>
         </div>
 
         <table class="table" v-if="showTable2 && !showInformation">
@@ -87,10 +88,14 @@
             </tr>
           </tbody>
         </table>
+
+        <div class="submit" v-if="showTable2">
+          <button @click="resetPesquisa">Limpar Pesquisa</button>
+        </div>
       </div>
 
       <div class="submit" v-if="anos.length && !showInformation2">
-        <button type="submit" @click="onClickShowTable">Buscar</button>
+        <button type="submit" @click="onClickShowTable">Pesquisar</button>
       </div>
 
       <div class="line" v-if="showTable"></div>
@@ -123,6 +128,9 @@
           </tr>
         </tbody>
       </table>
+      <div class="submit" v-if="showTable">
+        <button @click="resetPesquisa">Limpar Pesquisa</button>
+      </div>
     </div>
   </div>
 </template>
@@ -231,6 +239,20 @@ async function loadFipeInfoByCode() {
     fipeInfoByCode.value = response
   })
 }
+
+function resetPesquisa() {
+  showInformation.value = true
+  showInformation2.value = false
+  showTable.value = false
+  showTable2.value = false
+  tipo.value = ''
+  marca.value = ''
+  modelo.value = ''
+  ano.value = ''
+  fipeCode.value = ''
+  fipeCodeYear.value = []
+  fipeInfoByCode.value = []
+}
 </script>
 
 <style scoped>
@@ -264,7 +286,12 @@ async function loadFipeInfoByCode() {
 }
 
 .type_search button:hover {
-  background-color: #f2f4f7;
+  background-color: #fff;
+  color: #becdda;
+}
+
+.type_search button:focus {
+  background-color: #fff;
 }
 
 .btn-1 {
@@ -290,6 +317,9 @@ async function loadFipeInfoByCode() {
   background-color: #a5b8cb;
 }
 
+.type_btn button:active {
+  background-color: #a5b8cb;
+}
 .select-btn-date {
   width: 30%;
   padding: 8px;
@@ -336,11 +366,12 @@ h3 {
   padding: 10px;
   margin: 30px auto;
   font-size: 16px;
-  background-color: #007bff;
-  color: #fff;
+  background: 0 0;
+  color: #3c3c3c !important;
   border-radius: 5px;
-  border: none;
+  border: 2px solid #3c3c3c;
   cursor: pointer;
+  font-weight: 550;
 }
 
 .veiculo {
