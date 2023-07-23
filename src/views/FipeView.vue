@@ -6,17 +6,25 @@
 
   <div class="card">
     <div class="type_search">
-      <button ref="btnPesquisaComum" @click="onClickShowInformation" class="btn-1">Pesquisa comum</button>
-      <button ref="btnPesquisaCodigoFipe" @click="onClickShowInformation2" class="btn-2">Pesquisa por código Fipe</button>
+      <button ref="btnPesquisaComum" @click="onClickShowInformation" :class="{ selected: showInformation }" class="btn-1">
+        Pesquisa comum
+      </button>
+      <button ref="btnPesquisaCodigoFipe" @click="onClickShowInformation2" :class="{ selected: showInformation2 }" class="btn-2">
+        Pesquisa por código Fipe
+      </button>
     </div>
     <div class="wrap_content">
       <div class="type_btn">
         <h3>Selecione o tipo do veículo:</h3>
-        <button @click="onChangeType('cars')"><img src="/icons/car-2897.svg" alt="Car" class="veiculo" /></button>
-        <button @click="onChangeType('motorcycles')">
+        <button @click="onChangeType('cars')" :class="{ selected: selectedType === 'cars' }">
+          <img src="/icons/car-2897.svg" alt="Car" class="veiculo" />
+        </button>
+        <button @click="onChangeType('motorcycles')" :class="{ selected: selectedType === 'motorcycles' }">
           <img src="/icons/motorcycle-svgrepo-com.svg" alt="Motorcycle" class="veiculo" />
         </button>
-        <button @click="onChangeType('trucks')"><img src="/icons/truck-svgrepo-com.svg" alt="Truck" class="veiculo truck" /></button>
+        <button @click="onChangeType('trucks')" :class="{ selected: selectedType === 'trucks' }">
+          <img src="/icons/truck-svgrepo-com.svg" alt="Truck" class="veiculo truck" />
+        </button>
       </div>
 
       <div class="date">
@@ -165,6 +173,7 @@ const showInformation = ref(true)
 const showInformation2 = ref(false)
 const showTable = ref(false)
 const showTable2 = ref(false)
+const selectedType = ref('')
 
 function onClickShowTable2() {
   loadFipeInfoByCode()
@@ -194,6 +203,7 @@ onMounted(async () => {
 
 async function onChangeType(veiculo) {
   tipo.value = veiculo
+  selectedType.value = veiculo
   await readFipeMarcas(veiculo).then((response) => {
     marcas.value = response
   })
@@ -290,8 +300,9 @@ function resetPesquisa() {
   color: #becdda;
 }
 
-.type_search button:focus {
+.type_search button.selected {
   background-color: #fff;
+  color: #becdda;
 }
 
 .btn-1 {
@@ -317,7 +328,7 @@ function resetPesquisa() {
   background-color: #a5b8cb;
 }
 
-.type_btn button:active {
+.type_btn button.selected {
   background-color: #a5b8cb;
 }
 .select-btn-date {
