@@ -44,6 +44,27 @@ const router = createRouter({
       component: () => import('../views/RegistroView.vue')
     },
     {
+      path: '/corretoras',
+      name: 'corretoras',
+      component: () => import('../views/CorretorasView.vue')
+    },
+
+    {
+      path: '/taxas',
+      name: 'taxas',
+      component: () => import('../views/TaxasView.vue')
+    },
+    {
+      path: '/isbn',
+      name: 'isbn',
+      component: () => import('../views/isbnView.vue')
+    },
+    {
+      path: '/ncm',
+      name: 'ncm',
+      component: () => import('../views/ncmView.vue')
+    },
+    {
       path: '/fipe',
       name: 'fipe',
       component: () => import('../views/FipeView.vue')
