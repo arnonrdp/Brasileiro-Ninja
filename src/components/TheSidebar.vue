@@ -17,6 +17,7 @@
         <RouterLink to="/taxas">Taxas</RouterLink>
         <RouterLink to="/isbn" @click="closeSidebar">ISBN</RouterLink>
         <RouterLink to="/ncm" @click="closeSidebar">NCM</RouterLink>
+        <RouterLink to="/fipe" @click="closeSidebar">Tabela Fipe</RouterLink>
       </nav>
     </div>
   </aside>

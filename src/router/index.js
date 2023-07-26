@@ -63,6 +63,11 @@ const router = createRouter({
       path: '/ncm',
       name: 'ncm',
       component: () => import('../views/ncmView.vue')
+    },
+    {
+      path: '/fipe',
+      name: 'fipe',
+      component: () => import('../views/FipeView.vue')
     }
   ]
 })
