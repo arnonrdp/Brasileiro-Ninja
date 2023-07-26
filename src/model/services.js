@@ -33,3 +33,9 @@ export async function readCorretoras() {
 export async function readTaxas() {
   return await axios.get(`${baseUrl}/taxas/v1`).then((response) => response.data)
 }
+export async function readISBN(isbn) {
+  return await axios.get(`${baseUrl}/isbn/v1/${isbn}`).then((response) => response.data)
+}
+export async function readNCM(code) {
+  return await axios.get(`${baseUrl}/ncm/v1?search=${code}`).then((response) => response.data)
+}

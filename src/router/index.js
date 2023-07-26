@@ -53,6 +53,16 @@ const router = createRouter({
       path: '/taxas',
       name: 'taxas',
       component: () => import('../views/TaxasView.vue')
+    },
+    {
+      path: '/isbn',
+      name: 'isbn',
+      component: () => import('../views/isbnView.vue')
+    },
+    {
+      path: '/ncm',
+      name: 'ncm',
+      component: () => import('../views/ncmView.vue')
     }
   ]
 })

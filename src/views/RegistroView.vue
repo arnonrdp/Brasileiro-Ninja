@@ -84,5 +84,6 @@ body {
 .value {
   margin: 8px 0;
   font-size: 20px;
+  color: black;
 }
 </style>
