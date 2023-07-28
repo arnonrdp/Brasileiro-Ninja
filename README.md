@@ -12,4 +12,4 @@
 <img src="https://img.shields.io/github/package-json/dependency-version/arnonrdp/Brasileiro-Ninja/axios" />
 </p>
 
-<img src="./public/main.jpg" />
+<img src="./public/main.jpeg" />
