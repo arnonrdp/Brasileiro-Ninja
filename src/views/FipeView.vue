@@ -136,9 +136,6 @@
           </tr>
         </tbody>
       </table>
-      <div class="submit" v-if="showTable">
-        <button @click="resetPesquisa">Limpar Pesquisa</button>
-      </div>
     </div>
   </div>
 </template>
@@ -249,20 +246,6 @@ async function loadFipeInfoByCode() {
     fipeInfoByCode.value = response
   })
 }
-
-function resetPesquisa() {
-  showInformation.value = true
-  showInformation2.value = false
-  showTable.value = false
-  showTable2.value = false
-  tipo.value = ''
-  marca.value = ''
-  modelo.value = ''
-  ano.value = ''
-  fipeCode.value = ''
-  fipeCodeYear.value = []
-  fipeInfoByCode.value = []
-}
 </script>
 
 <style scoped>
@@ -290,19 +273,20 @@ function resetPesquisa() {
   border: none;
   padding: 0 10px;
   cursor: pointer;
-  background-color: #becdda;
+  background-color: #fff;
+  color: #becdda;
   font-size: 15px;
   font-weight: 550;
 }
 
 .type_search button:hover {
-  background-color: #fff;
-  color: #becdda;
+  background-color: #becdda;
+  color: black;
 }
 
 .type_search button.selected {
-  background-color: #fff;
-  color: #becdda;
+  background-color: #becdda;
+  color: black;
 }
 
 .btn-1 {
